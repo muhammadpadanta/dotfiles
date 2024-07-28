@@ -61,6 +61,7 @@ alias ls='exa -F --icons'
 alias ll='exa -l --icons'
 alias la='exa -a -F --icons'
 alias lt='exa -T --icons'
+alias lta='exa -T -a --icons'
 
 
 # Configuration #
