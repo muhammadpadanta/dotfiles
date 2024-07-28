@@ -1,0 +1,1 @@
+/home/muhammadpadanta/.asdf/completions/asdf.fish

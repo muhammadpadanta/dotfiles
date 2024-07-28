@@ -86,4 +86,4 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # eval "$(pyenv init --path)"
 # eval "$(pyenv init -)"
 
-
+#d
