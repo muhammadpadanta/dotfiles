@@ -10,7 +10,6 @@ if status is-interactive
         end
 end
 
-#ddd
 
 # Path #
 # General path
@@ -35,8 +34,8 @@ set -x PATH $SPRING_HOME/bin $PATH
 # set -gx JAVA_HOME (asdf which java | xargs dirname)
 set -gx JDTLS_JVM_ARGS "-javaagent:/home/muhammadpadanta/dev/lombok.jar"
 # set -x GOPATH $HOME/project/go
-set -gx PATH /home/muhammadpadanta/.asdf/bin $PATH
-set -gx ASDF_DIR /home/muhammadpadanta/.asdf
+#set -gx PATH /home/muhammadpadanta/.asdf/bin $PATH
+#set -gx ASDF_DIR /home/muhammadpadanta/.asdf
 
 
 # Aliases #
@@ -99,7 +98,7 @@ end
 # Initialize #
 starship init fish | source
 zoxide init fish | source
-source ~/.asdf/asdf.fish
+#source ~/.asdf/asdf.fish
 ~/.local/bin/mise activate fish | source
 #~/linuxbrew/.linuxbrew/bin/mise activate fish | source
 # set -Ux PYENV_ROOT $HOME/.pyenv

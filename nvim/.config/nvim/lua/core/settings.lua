@@ -116,6 +116,11 @@ settings["lsp_deps"] = {
 	"pyright",
 	"pylsp",
 	"gopls",
+	"tsserver",
+	--"jdtls",
+	"eslint",
+	"cssls",
+	"tailwindcss",
 }
 
 -- Set the general-purpose servers that will be installed during bootstrap here.
