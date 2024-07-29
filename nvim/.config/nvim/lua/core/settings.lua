@@ -117,7 +117,7 @@ settings["lsp_deps"] = {
 	"pylsp",
 	"gopls",
 	"tsserver",
-	--"jdtls",
+	"jdtls",
 	"eslint",
 	"cssls",
 	"tailwindcss",

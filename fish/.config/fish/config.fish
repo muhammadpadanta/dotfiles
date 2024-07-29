@@ -1,6 +1,8 @@
 # Greeting message
 set -u fish_greeting ""
 
+
+# Start tmux session home if theres none, else attach to it
 if status is-interactive
     and not set -q TMUX
         if tmux has-session -t home 2>/dev/null
@@ -26,16 +28,7 @@ set -gx PATH $HOME/.local/share/nvim/mason/bin $PATH
 set -gx PATH /home/muhammadpadanta/.local/share/nvim/mason/packages/python-lsp-server/venv/bin $PATH
 set -x SPRING_HOME /usr/local/spring-cli
 set -x PATH $SPRING_HOME/bin $PATH
-
-
-
-# Specific path
-# set -x JAVA_HOME /usr/lib/jvm/jdk-22-oracle-x64
-# set -gx JAVA_HOME (asdf which java | xargs dirname)
-set -gx JDTLS_JVM_ARGS "-javaagent:/home/muhammadpadanta/dev/lombok.jar"
-# set -x GOPATH $HOME/project/go
-#set -gx PATH /home/muhammadpadanta/.asdf/bin $PATH
-#set -gx ASDF_DIR /home/muhammadpadanta/.asdf
+set -gx JDTLS_JVM_ARGS "-javaagent:/home/muhammadpadanta/java-libs/lombok.jar"
 
 
 # Aliases #
@@ -98,9 +91,8 @@ end
 # Initialize #
 starship init fish | source
 zoxide init fish | source
-#source ~/.asdf/asdf.fish
 ~/.local/bin/mise activate fish | source
-#~/linuxbrew/.linuxbrew/bin/mise activate fish | source
+
 # set -Ux PYENV_ROOT $HOME/.pyenv
 # set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 # pyenv init - | source
