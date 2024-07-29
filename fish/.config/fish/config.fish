@@ -20,7 +20,6 @@ set -x PATH $PATH /home/muhammadpadanta/Android/Sdk/platform-tools
 set -x PATH /opt/lampp/bin $PATH
 set -x PATH $PATH /opt/lampp/bin
 set -x PATH $PATH $HOME/.config/composer/vendor/bin
-# set -x PATH $PATH $GOPATH/bin
 set -x PATH $PATH ~/.local/bin
 set -x PATH /home/linuxbrew/.linuxbrew/bin $PATH
 set -gx PATH $HOME/.asdf/shims $PATH
@@ -57,6 +56,13 @@ alias lta='exa -T -a --icons'
 
 
 # Configuration #
+# Set history limit to 5000 entries
+set -U fish_history_limit 5000
+
+# Atuin config
+set -gx ATUIN_NOBIND "true"
+bind \cr _atuin_search
+bind -M insert \cr _atuin_search
 
 
 # Function # 
@@ -80,6 +86,7 @@ function cd
     end
 end
 
+# Brew completions
 if test -d (brew --prefix)"/share/fish/completions"
     set -p fish_complete_path (brew --prefix)/share/fish/completions
 end
@@ -88,10 +95,14 @@ if test -d (brew --prefix)"/share/fish/vendor_completions.d"
     set -p fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
 end
 
+
 # Initialize #
 starship init fish | source
 zoxide init fish | source
 ~/.local/bin/mise activate fish | source
+atuin init fish | source
+
+
 
 # set -Ux PYENV_ROOT $HOME/.pyenv
 # set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths

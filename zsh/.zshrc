@@ -87,3 +87,7 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # eval "$(pyenv init -)"
 
 #d
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
