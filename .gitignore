@@ -1,2 +1,24 @@
-.DS_Store
 node_modules
+*.bak
+*.swp
+*.tmp
+*.lock
+
+# Ignore cache and backup files
+.cache/
+.local/
+.state/
+
+# Ignore specific tool configurations
+mise/.cache/
+mise/.local/
+mise/.state/
+
+nvim/.cache/
+nvim/.local/
+nvim/.state/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
