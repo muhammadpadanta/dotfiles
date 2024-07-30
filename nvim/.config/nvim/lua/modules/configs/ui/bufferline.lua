@@ -21,7 +21,7 @@ return function()
 			enforce_regular_tabs = false,
 			persist_buffer_sort = true,
 			always_show_bufferline = true,
-			separator_style = "slant",
+			separator_style = "thin",
 			diagnostics = "nvim_lsp",
 			diagnostics_indicator = function(count)
 				return "(" .. count .. ")"

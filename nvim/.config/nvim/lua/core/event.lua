@@ -33,6 +33,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
+--[[ vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		if vim.fn.isdirectory(vim.fn.argv(0)) == 1 then
+			vim.cmd("cd " .. vim.fn.argv(0))
+			vim.cmd("NvimTreeOpen")
+		elseif vim.fn.argc() == 0 then
+			vim.cmd("NvimTreeOpen")
+		end
+	end,
+	group = vim.api.nvim_create_augroup("OpenNvimTree", { clear = true }),
+}) ]]
+
 -- auto close NvimTree
 vim.api.nvim_create_autocmd("BufEnter", {
 	group = vim.api.nvim_create_augroup("NvimTreeClose", { clear = true }),
