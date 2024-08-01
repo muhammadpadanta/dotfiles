@@ -16,6 +16,7 @@ end
 # Path #
 # General path
 set -x PATH $PATH /opt/flutter/bin
+set -gx ANDROID_HOME /home/muhammadpadanta/Android/Sdk
 set -x PATH $PATH /home/muhammadpadanta/Android/Sdk/platform-tools
 set -x PATH /opt/lampp/bin $PATH
 set -x PATH $PATH /opt/lampp/bin
@@ -28,6 +29,8 @@ set -gx PATH /home/muhammadpadanta/.local/share/nvim/mason/packages/python-lsp-s
 set -x SPRING_HOME /usr/local/spring-cli
 set -x PATH $SPRING_HOME/bin $PATH
 set -gx JDTLS_JVM_ARGS "-javaagent:/home/muhammadpadanta/java-libs/lombok.jar"
+
+
 
 
 # Aliases #
@@ -46,6 +49,13 @@ alias ckitty 'nvim ~/.config/kitty/kitty.conf'
 alias cnv 'nvim ~/.config/nvim/'
 alias cstar 'nvim ~/.config/starship.toml'
 alias tks 'tmux kill-server'
+
+# du aliases
+# Alias to check the size of a directory
+alias dsize='du -sh'
+
+# Alias to check the size of all directories and subdirectories in the current path
+alias dsize-all='du -sh * | sort -rh'
 
 
 

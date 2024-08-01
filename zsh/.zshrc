@@ -91,3 +91,5 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
+
+PATH=~/.console-ninja/.bin:$PATH
