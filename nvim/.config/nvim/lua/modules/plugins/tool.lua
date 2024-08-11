@@ -144,12 +144,58 @@ tool["mfussenegger/nvim-dap"] = {
 
 -- Flutter-tools PLugins
 tool["akinsho/flutter-tools.nvim"] = {
-	lazy = false,
+	lazy = true,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"stevearc/dressing.nvim", -- optional for vim.ui.select
 	},
 	config = true,
+}
+
+-- obsidian.nvim
+tool["epwalsh/obsidian.nvim"] = {
+	version = "*", -- recommended, use latest release instead of latest commit
+	lazy = true,
+	ft = "markdown",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		-- see below for full list of optional dependencies 👇
+	},
+	opts = {
+		workspaces = {
+			{
+				name = "personal",
+				path = "~/Documents/danta-vault/",
+			},
+			{
+				name = "work",
+				path = "~/Documents/danta-vault/",
+			},
+		},
+		completion = {
+			-- Set to false to disable completion.
+			nvim_cmp = true,
+			-- Trigger completion at 2 chars.
+			min_chars = 2,
+		},
+	},
+}
+
+-- Codesnap.nvim
+tool["mistricky/codesnap.nvim"] = {
+	lazy = false,
+	build = "make",
+	opts = {
+		save_path = "~/Pictures/Codesnap",
+		has_breadcrumbs = true,
+		has_line_number = true,
+		bg_color = "#181825",
+		bg_x_padding = 30,
+		bg_y_padding = 20,
+		bg_padding = nil,
+		watermark = "",
+		code_font_family = "JetBrains Mono",
+	},
 }
 
 return tool

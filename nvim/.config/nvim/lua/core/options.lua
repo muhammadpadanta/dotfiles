@@ -20,7 +20,7 @@ local function load_options()
 		complete = ".,w,b,k,kspell",
 		completeopt = "menuone,noselect,popup",
 		concealcursor = "niv",
-		conceallevel = 0,
+		conceallevel = 1,
 		cursorcolumn = true,
 		cursorline = true,
 		diffopt = "filler,iwhite,internal,linematch:60,algorithm:patience",

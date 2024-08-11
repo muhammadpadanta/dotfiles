@@ -195,6 +195,20 @@ local plug_map = {
 		:with_noremap()
 		:with_silent()
 		:with_desc("flutter: Open Flutter commands"),
+
+	--plugin codesnap
+	["v|<leader>as"] = map_cu("CodeSnapSave")
+		:with_noremap()
+		:with_silent()
+		:with_desc("tool: Save selected code snapshot in ~/Pictures/Codesnap"),
+
+	-- PLugin: Obsidian.nvim
+	["n|<F3>"] = map_callback(function()
+			require("obsidian").util.toggle_checkbox()
+		end)
+		:with_noremap()
+		:with_silent()
+		:with_desc("obsidian: Toogle checkboxes in markdown"),
 }
 
 bind.nvim_load_mapping(plug_map)

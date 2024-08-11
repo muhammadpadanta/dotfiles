@@ -1,19 +1,11 @@
-# Greeting message
-set -u fish_greeting ""
+# .·:''''''''''''''''''''''''':·.
+# : :  ____   _  _____ _   _  : :
+# : : |  _ \ / \|_   _| | | | : :
+# : : | |_) / _ \ | | | |_| | : :
+# : : |  __/ ___ \| | |  _  | : :
+# : : |_| /_/   \_\_| |_| |_| : :
+# '·:.........................:·'
 
-
-# Start tmux session home if theres none, else attach to it
-if status is-interactive
-    and not set -q TMUX
-        if tmux has-session -t home 2>/dev/null
-            exec tmux attach-session -t home
-        else
-            tmux new-session -s home
-        end
-end
-
-
-# Path #
 # General path
 set -x PATH $PATH /opt/flutter/bin
 set -gx ANDROID_HOME /home/muhammadpadanta/Android/Sdk
@@ -29,17 +21,23 @@ set -gx PATH /home/muhammadpadanta/.local/share/nvim/mason/packages/python-lsp-s
 set -x SPRING_HOME /usr/local/spring-cli
 set -x PATH $SPRING_HOME/bin $PATH
 set -gx JDTLS_JVM_ARGS "-javaagent:/home/muhammadpadanta/java-libs/lombok.jar"
+set -x EDITOR code
 
 
 
+# .·:''''''''''''''''''''''''''''''''''''''''''''''':·.
+# : :     _    _     ___    _    ____  _____ ____   : :
+# : :    / \  | |   |_ _|  / \  / ___|| ____/ ___|  : :
+# : :   / _ \ | |    | |  / _ \ \___ \|  _| \___ \  : :
+# : :  / ___ \| |___ | | / ___ \ ___) | |___ ___) | : :
+# : : /_/   \_\_____|___/_/   \_\____/|_____|____/  : :
+# '·:...............................................:·'
 
-# Aliases #
 # general aliases
 alias stopxampp 'sudo /opt/lampp/xampp stop'
 alias startxampp 'sudo /opt/lampp/xampp start'
 alias mysqlxampp 'sudo /opt/lampp/bin/mysql -u root -p'
 alias obs 'flatpak run com.obsproject.Studio'
-alias ll 'ls -la'
 alias cfish 'nvim ~/.config/fish/config.fish'
 alias sfish 'source ~/.config/fish/config.fish'
 alias pfish 'nvim ~/.config/fish/functions/fish_prompt.fish'
@@ -49,35 +47,66 @@ alias ckitty 'nvim ~/.config/kitty/kitty.conf'
 alias cnv 'nvim ~/.config/nvim/'
 alias cstar 'nvim ~/.config/starship.toml'
 alias tks 'tmux kill-server'
+alias chrome 'google-chrome --new-tab 2>/dev/null'
+alias firefox 'firefox --new-tab 2>/dev/null'
+alias brave='brave-browser --new-tab 2>/dev/null'
+alias cx 'chmod +x'
 
 # du aliases
 # Alias to check the size of a directory
 alias dsize='du -sh'
-
 # Alias to check the size of all directories and subdirectories in the current path
 alias dsize-all='du -sh * | sort -rh'
-
-
 
 # exa aliases
 alias ls='exa -F --icons'
 alias ll='exa -l --icons'
 alias la='exa -a -F --icons'
 alias lt='exa -T --icons'
-alias lta='exa -T -a --icons'
+alias lta='exa -T -a -L4 --ignore-glob=.git --icons'
 
 
-# Configuration #
+# .·:''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''':·.
+# : :   ____ ___  _   _ _____ ___ ____ _   _ ____      _  _____ ___ ___  _   _  : :
+# : :  / ___/ _ \| \ | |  ___|_ _/ ___| | | |  _ \    / \|_   _|_ _/ _ \| \ | | : :
+# : : | |  | | | |  \| | |_   | | |  _| | | | |_) |  / _ \ | |  | | | | |  \| | : :
+# : : | |__| |_| | |\  |  _|  | | |_| | |_| |  _ <  / ___ \| |  | | |_| | |\  | : :
+# : :  \____\___/|_| \_|_|   |___\____|\___/|_| \_\/_/   \_\_| |___\___/|_| \_| : :
+# '·:...........................................................................:·'
+
 # Set history limit to 5000 entries
 set -U fish_history_limit 5000
 
-# Atuin config
-set -gx ATUIN_NOBIND "true"
-bind \ck _atuin_search
-bind -M insert \ck _atuin_search
+# FZF config
+set -Ux FZF_DEFAULT_OPTS \
+  "--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+   --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+   --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+   --color 'border:#ffffff,info:#ffff00' \
+   --preview 'seq 1000' \
+   --tmux 70% --border --layout reverse"
+
+fzf_configure_bindings --directory=\cf
 
 
-# Function # 
+# .·:'''''''''''''''''''''''''''''''''''''''''''''''':·.
+# : :  _____ _   _ _   _  ____ _____ ___ ___  _   _  : :
+# : : |  ___| | | | \ | |/ ___|_   _|_ _/ _ \| \ | | : :
+# : : | |_  | | | |  \| | |     | |  | | | | |  \| | : :
+# : : |  _| | |_| | |\  | |___  | |  | | |_| | |\  | : :
+# : : |_|    \___/|_| \_|\____| |_| |___\___/|_| \_| : :
+# '·:................................................:·'
+
+# Start tmux session home if theres none, else attach to it
+if status is-interactive
+    and not set -q TMUX
+        if tmux has-session -t home 2>/dev/null
+            exec tmux attach-session -t home
+        else
+            tmux new-session -s home
+        end
+end
+
 # fish function to cd to parent directory
 function cd
     switch (count $argv)
@@ -98,6 +127,11 @@ function cd
     end
 end
 
+# Greeting message
+function fish_greeting
+    neofetch
+end
+
 # Brew completions
 if test -d (brew --prefix)"/share/fish/completions"
     set -p fish_complete_path (brew --prefix)/share/fish/completions
@@ -107,31 +141,33 @@ if test -d (brew --prefix)"/share/fish/vendor_completions.d"
     set -p fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
 end
 
-# FZF config
-set -Ux FZF_DEFAULT_OPTS \
-  "--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
-   --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
-   --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
-   --color 'border:#ffffff,info:#ffff00' \
-   --preview 'seq 1000' \
-   --tmux 70% --border --layout reverse"
 
-fzf_configure_bindings --directory=\cf
+# .·:'''''''''''''''''''''''''''''''''''''''''''''''''''''''':·.
+# : :  ___ _   _ ___ _____ ___    _    _     ___ __________  : :
+# : : |_ _| \ | |_ _|_   _|_ _|  / \  | |   |_ _|__  / ____| : :
+# : :  | ||  \| || |  | |  | |  / _ \ | |    | |  / /|  _|   : :
+# : :  | || |\  || |  | |  | | / ___ \| |___ | | / /_| |___  : :
+# : : |___|_| \_|___| |_| |___/_/   \_\_____|___/____|_____| : :
+# '·:........................................................:·'
 
-
-# Initialize #
 starship init fish | source
 zoxide init fish | source
 ~/.local/bin/mise activate fish | source
-atuin init fish | source
 
 
 
 
-# set -Ux PYENV_ROOT $HOME/.pyenv
-# set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
-# pyenv init - | source
 
+# .·:''''''''''''''''''''''''''''''''''''''':·.
+# : :  _   _ _   _ _   _ ____  _____ ____   : :
+# : : | | | | \ | | | | / ___|| ____|  _ \  : :
+# : : | | | |  \| | | | \___ \|  _| | | | | : :
+# : : | |_| | |\  | |_| |___) | |___| |_| | : :
+# : :  \___/|_| \_|\___/|____/|_____|____/  : :
+# '·:.......................................:·'
 
-
-
+# Atuin config
+#set -gx ATUIN_NOBIND "true"
+#bind \ck _atuin_search
+#bind -M insert \ck _atuin_search
+#atuin init fish | source
