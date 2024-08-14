@@ -49,8 +49,9 @@ alias cstar 'nvim ~/.config/starship.toml'
 alias tks 'tmux kill-server'
 alias chrome 'google-chrome --new-tab 2>/dev/null'
 alias firefox 'firefox --new-tab 2>/dev/null'
-alias brave='brave-browser --new-tab 2>/dev/null'
+alias brave 'brave-browser --new-tab 2>/dev/null'
 alias cx 'chmod +x'
+alias icat 'kitten icat' 
 
 # du aliases
 # Alias to check the size of a directory
