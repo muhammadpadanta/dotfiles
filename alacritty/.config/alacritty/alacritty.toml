@@ -9,15 +9,10 @@ import = [
    "~/.config/alacritty/catppuccin-mocha.toml"
 ]
 
-[env]
-TERM = "xterm-256color"
-
 [font]
 size = 13
-
-[font.normal]
-family = "JetBrainsMono Nerd Font"
-style = "Medium"
+normal.family = "JetBrainsMono Nerd Font"
+normal.style = "Medium"
 
 [shell]
 program = "/usr/bin/fish"
@@ -30,4 +25,9 @@ y = 12
 columns = 175
 lines = 38
 
+[env]
+TERM = "xterm-256color"
 
+
+[colors]
+transparent_background_colors = true
