@@ -100,6 +100,15 @@ function cd() {
     fi
 }
 
+# Start tmux session "homezsh" using zsh shell if there's none, else attach to it
+if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
+  if tmux has-session -t homezsh 2>/dev/null; then
+    tmux attach-session -t homezsh
+  else
+    tmux new-session -s homezsh /usr/bin/zsh
+  fi
+fi
+
 #Greetings message
 function zsh_greeting() {
     neofetch
