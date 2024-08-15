@@ -15,7 +15,7 @@ normal.family = "JetBrainsMono Nerd Font"
 normal.style = "Medium"
 
 [shell]
-program = "/usr/bin/fish"
+program = "/usr/bin/zsh"
 
 [window.padding]
 x = 9
@@ -28,6 +28,6 @@ lines = 38
 [env]
 TERM = "xterm-256color"
 
-
 [colors]
-transparent_background_colors = true
+draw_bold_text_with_bright_colors = true
+

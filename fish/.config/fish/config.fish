@@ -41,8 +41,11 @@ alias obs 'flatpak run com.obsproject.Studio'
 alias cfish 'nvim ~/.config/fish/config.fish'
 alias sfish 'source ~/.config/fish/config.fish'
 alias pfish 'nvim ~/.config/fish/functions/fish_prompt.fish'
+alias czsh 'nvim ~/.zshrc'
+alias cbash 'nvim ~/.bashrc'
 alias cmux 'nvim .tmux.conf'
 alias smux 'tmux source ~/.tmux.conf'
+alias cala 'nvim ~/.config/alacritty/alacritty.toml'
 alias ckitty 'nvim ~/.config/kitty/kitty.conf'
 alias cnv 'nvim ~/.config/nvim/'
 alias cstar 'nvim ~/.config/starship.toml'
@@ -85,7 +88,7 @@ set -Ux FZF_DEFAULT_OPTS \
    --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
    --color 'border:#ffffff,info:#ffff00' \
    --preview 'seq 1000' \
-   --tmux 70% --border --layout reverse"
+   --tmux 50% --border --layout reverse"
 
 fzf_configure_bindings --directory=\cf
 
@@ -98,13 +101,13 @@ fzf_configure_bindings --directory=\cf
 # : : |_|    \___/|_| \_|\____| |_| |___\___/|_| \_| : :
 # '·:................................................:·'
 
-# Start tmux session home if theres none, else attach to it
+# Start tmux session home using default shell if theres none, else attach to it
 if status is-interactive
     and not set -q TMUX
-        if tmux has-session -t home 2>/dev/null
-            exec tmux attach-session -t home
+        if tmux has-session -t homefish 2>/dev/null
+            exec tmux attach-session -t homefish
         else
-            tmux new-session -s home
+            tmux new-session -s homefish
         end
 end
 

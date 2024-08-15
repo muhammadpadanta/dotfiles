@@ -8,7 +8,7 @@ error_symbol = "[󱏳](red)"
 vimcmd_symbol = "[❮](green)"
 
 [directory]
-truncation_length = 2
+truncation_length = 3
 home_symbol = "~"
 truncation_symbol = ".../"
 style = "bold lavender"
@@ -16,7 +16,7 @@ style = "bold lavender"
 
 [username]
 show_always = true
-format = '[$user]($style) in |  '
+format = '[ダンタ](maroon) in |[ 󰝰 ](lavender)'
 
 # palette tables should be last in the config ⚓️
 [palettes.catppuccin_macchiato]
