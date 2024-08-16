@@ -1,5 +1,5 @@
 live_config_reload = true
-window.opacity = 0.93
+window.opacity = 0.97
 
 import = [
   # uncomment the flavour you want below:
@@ -13,6 +13,8 @@ import = [
 size = 14
 normal.family = "JetBrainsMono Nerd Font"
 normal.style = "SemiBold"
+italic.family = "JetBrainsMono Nerd Font"
+italic.style = "SemiBold Italic"
 #glyph_offset.y = -1
 offset.y = -1
 #builtin_box_drawing = false
