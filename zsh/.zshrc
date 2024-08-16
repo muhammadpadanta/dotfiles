@@ -22,13 +22,13 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
 # Add in snippets
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
-zinit snippet OMZP::aws
-zinit snippet OMZP::kubectl
-zinit snippet OMZP::kubectx
-zinit snippet OMZP::command-not-found
+#zinit snippet OMZP::git
+#zinit snippet OMZP::sudo
+#zinit snippet OMZP::archlinux
+#zinit snippet OMZP::aws
+#zinit snippet OMZP::kubectl
+#zinit snippet OMZP::kubectx
+#zinit snippet OMZP::command-not-found
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -149,6 +149,7 @@ alias cfish='nvim ~/.config/fish/config.fish'
 alias pfish='nvim ~/.config/fish/functions/fish_prompt.fish'
 alias czsh='nvim ~/.zshrc'
 alias szsh='source ~/.zshrc'
+alias cbash='nvim ~/.bashrc'
 alias cmux='nvim .tmux.conf'
 alias smux='tmux source ~/.tmux.conf'
 alias cala='nvim ~/.config/alacritty/alacritty.toml'

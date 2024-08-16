@@ -11,12 +11,12 @@ vimcmd_symbol = "[❮](green)"
 truncation_length = 3
 home_symbol = "~"
 truncation_symbol = ".../"
-style = "bold lavender"
+style = "bold blue"
 # fish_style_pwd_dir_length = 1
 
 [username]
 show_always = true
-format = '[ダンタ](maroon) in |[ 󰝰 ](lavender)'
+format = '󱍢 PixelDino - [ダンタ](maroon) in |[ 󰝰 ](lavender)'
 
 # palette tables should be last in the config ⚓️
 [palettes.catppuccin_macchiato]
