@@ -1,1 +1,0 @@
-#+TITLE: =/home/muhammadpadanta/dotfiles=

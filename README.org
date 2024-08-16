@@ -1,0 +1,51 @@
+#+TITLE: =/home/muhammadpadanta/dotfiles=
+
+* Introduction
+  This repository contains my personal dotfiles, which I use to configure my development environment on Linux Mint. I manage these dotfiles using =GNU Stow=, a symlink manager that makes it easy to keep configurations organized and portable.
+
+* Getting Started
+  To set up these dotfiles on your machine, you'll need:
+  - Linux Mint (or any Unix-like system)
+  - =GNU Stow= installed
+
+* Installation
+  Clone this repository to your home directory:
+  #+BEGIN_SRC bash
+  git clone https://github.com/muhammadpadanta/dotfiles.git ~/dotfiles
+  #+END_SRC
+
+  Then, navigate into the dotfiles directory and use =stow= to symlink the configurations:
+  #+BEGIN_SRC bash
+  cd ~/dotfiles
+  stow <package>
+  #+END_SRC
+  Replace =<package>= with the name of the config folder you want to stow (e.g., =nvim=, =fish=, etc.).
+
+* Directory Structure
+  Each directory in this repository represents a set of related configuration files. For example:
+  - =nvim/=: Configuration files for Neovim
+  - =fish/=: Fish shell settings
+  - =starship/=: Starship prompt configuration
+
+* Example Usage
+  To set up all configurations at once, simply run:
+  #+BEGIN_SRC bash
+  stow *
+  #+END_SRC
+
+  Or, if you only want specific configurations:
+  #+BEGIN_SRC bash
+  stow nvim
+  stow fish
+  #+END_SRC
+
+* Notes
+  - If you encounter conflicts, you might already have config files in place. Consider backing them up before running =stow=.
+  - The symlinks created by Stow are placed relative to your home directory. If something looks off, check the symlink paths.
+
+* Customization
+  Feel free to fork and adjust these dotfiles to match your preferences. They’re meant to be a starting point that you can build upon.
+
+* License
+  MIT License – see the LICENSE file for details.
+
