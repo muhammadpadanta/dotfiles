@@ -40,12 +40,17 @@ alias cala 'nvim ~/.config/alacritty/alacritty.toml'
 alias ckitty 'nvim ~/.config/kitty/kitty.conf'
 alias cnv 'nvim ~/.config/nvim/'
 alias cstar 'nvim ~/.config/starship.toml'
+alias tns 'tmux new -s'
 alias tks 'tmux kill-server'
 alias chrome 'google-chrome --new-tab 2>/dev/null'
 alias firefox 'firefox --new-tab 2>/dev/null'
 alias brave 'brave-browser --new-tab 2>/dev/null'
 alias cx 'chmod +x'
 alias icat 'kitten icat' 
+alias startssh 'sudo systemctl start ssh'
+alias statusssh 'sudo systemctl status ssh'
+alias stopssh 'sudo systemctl stop ssh'
+
 
 # du aliases
 # Alias to check the size of a directory
@@ -87,12 +92,13 @@ fzf_configure_bindings --directory=\cf
 # Start tmux session home using default shell if theres none, else attach to it
 if status is-interactive
     and not set -q TMUX
-        if tmux has-session -t homefish 2>/dev/null
-            exec tmux attach-session -t homefish
+        if tmux has-session -tDailyTask 2>/dev/null
+            tmux attach-session -tDailyTask
         else
-            tmux new-session -s homefish
+            tmux new-session -sDailyTask
         end
 end
+
 
 # fish function to cd to parent directory
 function cd
