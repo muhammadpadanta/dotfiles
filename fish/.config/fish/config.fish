@@ -28,7 +28,14 @@ set -x EDITOR code
 alias stopxampp 'sudo /opt/lampp/xampp stop'
 alias startxampp 'sudo /opt/lampp/xampp start'
 alias mysqlxampp 'sudo /opt/lampp/bin/mysql -u root -p'
-alias obs 'flatpak run com.obsproject.Studio'
+alias obs 'flatpak run com.obsproject.Studioo'
+alias cx 'chmod +x'
+alias icat 'kitten icat' 
+alias startssh 'sudo systemctl start ssh'
+alias statusssh 'sudo systemctl status ssh'
+alias stopssh 'sudo systemctl stop ssh'
+
+#config alias
 alias cfish 'nvim ~/.config/fish/config.fish'
 alias sfish 'source ~/.config/fish/config.fish'
 alias pfish 'nvim ~/.config/fish/functions/fish_prompt.fish'
@@ -40,22 +47,21 @@ alias cala 'nvim ~/.config/alacritty/alacritty.toml'
 alias ckitty 'nvim ~/.config/kitty/kitty.conf'
 alias cnv 'nvim ~/.config/nvim/'
 alias cstar 'nvim ~/.config/starship.toml'
+alias cneo 'nvim ~/.config/neofetch/config.conf'
+
+#tmux alias
 alias tns 'tmux new -s'
 alias tks 'tmux kill-server'
+
+# browser alias
 alias chrome 'google-chrome --new-tab 2>/dev/null'
 alias firefox 'firefox --new-tab 2>/dev/null'
 alias brave 'brave-browser --new-tab 2>/dev/null'
-alias cx 'chmod +x'
-alias icat 'kitten icat' 
-alias startssh 'sudo systemctl start ssh'
-alias statusssh 'sudo systemctl status ssh'
-alias stopssh 'sudo systemctl stop ssh'
-
 
 # du aliases
-# Alias to check the size of a directory
+# check the size of a directory
 alias dsize='du -sh'
-# Alias to check the size of all directories and subdirectories in the current path
+# check the size of all directories and subdirectories in the current path
 alias dsize-all='du -sh * | sort -rh'
 
 # exa aliases
