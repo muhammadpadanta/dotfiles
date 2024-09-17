@@ -41,15 +41,15 @@ local plug_map = {
 		:with_silent()
 		:with_desc("terminal: Toggle vertical"),
 	["t|<A-\\>"] = map_cmd("<Cmd>ToggleTerm<CR>"):with_noremap():with_silent():with_desc("terminal: Toggle vertical"),
-	["n|<F5>"] = map_cr("ToggleTerm direction=vertical")
+	["n|<F6>"] = map_cr("ToggleTerm direction=vertical")
 		:with_noremap()
 		:with_silent()
 		:with_desc("terminal: Toggle vertical"),
-	["i|<F5>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=vertical<CR>")
+	["i|<F6>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=vertical<CR>")
 		:with_noremap()
 		:with_silent()
 		:with_desc("terminal: Toggle vertical"),
-	["t|<F5>"] = map_cmd("<Cmd>ToggleTerm<CR>"):with_noremap():with_silent():with_desc("terminal: Toggle vertical"),
+	["t|<F6>"] = map_cmd("<Cmd>ToggleTerm<CR>"):with_noremap():with_silent():with_desc("terminal: Toggle vertical"),
 	["n|<A-d>"] = map_cr("ToggleTerm direction=float"):with_noremap():with_silent():with_desc("terminal: Toggle float"),
 	["i|<A-d>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=float<CR>")
 		:with_noremap()
@@ -127,7 +127,7 @@ local plug_map = {
 		:with_desc("tool: Miscellaneous"),
 
 	-- Plugin: dap
-	["n|<F6>"] = map_callback(function()
+	["n|<F5>"] = map_callback(function()
 			require("dap").continue()
 		end)
 		:with_noremap()
@@ -139,25 +139,25 @@ local plug_map = {
 		:with_noremap()
 		:with_silent()
 		:with_desc("debug: Stop"),
-	["n|<F8>"] = map_callback(function()
+	["n|<F9>"] = map_callback(function()
 			require("dap").toggle_breakpoint()
 		end)
 		:with_noremap()
 		:with_silent()
 		:with_desc("debug: Toggle breakpoint"),
-	["n|<F9>"] = map_callback(function()
+	["n|<F11>"] = map_callback(function()
 			require("dap").step_into()
 		end)
 		:with_noremap()
 		:with_silent()
 		:with_desc("debug: Step into"),
-	["n|<F10>"] = map_callback(function()
+	["n|<F12>"] = map_callback(function()
 			require("dap").step_out()
 		end)
 		:with_noremap()
 		:with_silent()
 		:with_desc("debug: Step out"),
-	["n|<F11>"] = map_callback(function()
+	["n|<F10>"] = map_callback(function()
 			require("dap").step_over()
 		end)
 		:with_noremap()

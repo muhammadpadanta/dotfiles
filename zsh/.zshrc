@@ -188,3 +188,5 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 
 
+
+PATH=~/.console-ninja/.bin:$PATH

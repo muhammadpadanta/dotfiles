@@ -19,7 +19,6 @@ set -x PATH $SPRING_HOME/bin $PATH
 set -gx JDTLS_JVM_ARGS "-javaagent:/home/muhammadpadanta/java-libs/lombok.jar"
 set -x EDITOR code
 
-
 # ░█▀█░█░░░▀█▀░█▀█░█▀▀░█▀▀░█▀▀
 # ░█▀█░█░░░░█░░█▀█░▀▀█░█▀▀░▀▀█
 # ░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀
@@ -34,6 +33,7 @@ alias icat 'kitten icat'
 alias startssh 'sudo systemctl start ssh'
 alias statusssh 'sudo systemctl status ssh'
 alias stopssh 'sudo systemctl stop ssh'
+alias gemini 'python ~/project/python/gemini.py'
 
 #config alias
 alias cfish 'nvim ~/.config/fish/config.fish'
@@ -52,6 +52,10 @@ alias cneo 'nvim ~/.config/neofetch/config.conf'
 #tmux alias
 alias tns 'tmux new -s'
 alias tks 'tmux kill-server'
+
+#AVD alias
+alias listavd '$ANDROID_HOME/tools/emulator -list-avds'
+alias startavd '$ANDROID_HOME/tools/emulator -avd Pixel_7_API_35'
 
 # browser alias
 alias chrome 'google-chrome --new-tab 2>/dev/null'
@@ -86,7 +90,7 @@ set -Ux FZF_DEFAULT_OPTS \
    --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
    --color 'border:#ffffff,info:#ffff00' \
    --preview 'seq 1000' \
-   --tmux 50% --border --layout reverse"
+   --height 70% --border --layout reverse"
 
 fzf_configure_bindings --directory=\cf
 
@@ -126,10 +130,7 @@ function cd
     end
 end
 
-# Greeting message
-function fish_greeting
-    neofetch
-end
+set -U fish_greeting
 
 # Brew completions
 if test -d (brew --prefix)"/share/fish/completions"

@@ -149,7 +149,39 @@ tool["akinsho/flutter-tools.nvim"] = {
 		"nvim-lua/plenary.nvim",
 		"stevearc/dressing.nvim", -- optional for vim.ui.select
 	},
-	config = true,
+	opts = {
+		debugger = {
+			enabled = true,
+			run_via_dap = false,
+			register_configurations = function(_)
+				require("dap").configurations.dart = {
+					{
+						type = "dart",
+						request = "launch",
+						name = "Launch Flutter Program",
+						-- The nvim-dap plugin populates this variable with the filename of the current buffer
+						program = "${file}",
+						-- The nvim-dap plugin populates this variable with the editor's current working directory
+						cwd = "${workspaceFolder}",
+						-- This gets forwarded to the Flutter CLI tool, substitute `linux` for whatever device you wish to launch
+
+						console = "integratedTerminal",
+					},
+				}
+			end,
+		},
+		widget_guides = {
+			enabled = true,
+		},
+		dev_log = {
+			enabled = false,
+			filter = nil, -- optional callback to filter the log
+			-- takes a log_line as string argument; returns a boolean or nil;
+			-- the log_line is only added to the output if the function returns true
+			notify_errors = false, -- if there is an error whilst running then notify the user
+			open_cmd = "tabedit", -- command to use to open the log buffer
+		},
+	},
 }
 
 -- obsidian.nvim
